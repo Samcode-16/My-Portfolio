@@ -100,6 +100,19 @@ export const PortfolioContent = () => {
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-zinc-100 bg-white">
+            <div className="px-6 py-4 flex flex-col gap-4 text-sm text-zinc-600">
+              <a href="#skills" className="hover:text-zinc-900 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Skills</a>
+              <a href="#projects" className="hover:text-zinc-900 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Projects</a>
+              <a href="#activities" className="hover:text-zinc-900 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Activities</a>
+              <a href="#achievements" className="hover:text-zinc-900 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Achievements</a>
+              <a href="#contact" className="hover:text-rose-500 transition-colors py-2 font-medium text-rose-600" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
