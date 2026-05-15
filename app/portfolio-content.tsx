@@ -55,25 +55,37 @@ export const PortfolioContent = () => {
       id: 'Screen_Recording_2026-05-11_161335',
       title: 'Dasara Mitra',
       desc: 'An ultimate trilingual digital companion for navigating through mysuru dasara festival, planning transport and connect with chatbot for queries.',
-      link: 'https://github.com/Samcode-16/Dasara-Mitra'
+      link: 'https://github.com/Samcode-16/Dasara-Mitra',
+      context: 'Inunity - Innovation & Design Thinking',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Chatbot', 'Geolocation API'],
+      category: 'Web Development'
     },
     {
       id: 'Video_Project_4',
       title: 'Electoral voter information extractor',
       desc: 'OCR system to extract voter details from electoral roll PDF',
-      link: 'https://github.com/DeekshaR06/electoral-roll-ocr'
+      link: 'https://github.com/DeekshaR06/electoral-roll-ocr',
+      context: 'Collaborative Project',
+      technologies: ['Python', 'OCR', 'PDF Processing', 'Computer Vision', 'Machine Learning'],
+      category: 'AI/ML'
     },
     {
       id: 'Screen_Recording_2026-05-11_185615',
       title: 'Multilayer File Encryption',
       desc: 'Multi layer file encryption combining Playfair cipher, columnar transposition, and DES block cipher. Encrypt and decrypt files through a sophisticated triple-layer pipeline with an intuitive web interface.',
-      link: 'https://github.com/Samcode-16/cipherstack-files'
+      link: 'https://github.com/Samcode-16/cipherstack-files',
+      context: 'Cryptography Course Project',
+      technologies: ['React', 'JavaScript', 'Cryptography', 'DES', 'Web Encryption', 'Tailwind CSS'],
+      category: 'Security & Cryptography'
     },
     {
       id: 'Screen_Recording_2026-05-11_193356',
       title: 'Smart Receipt Analyzer',
       desc: 'An AI-powered web application that extracts, analyzes, and organizes data from receipt images using Google AI Studio and Firebase.',
-      link: 'https://github.com/Samcode-16/Smart-Receipt-Analyser'
+      link: 'https://github.com/Samcode-16/Smart-Receipt-Analyser',
+      context: 'Personal Project',
+      technologies: ['React', 'Google AI Studio', 'Firebase', 'Image Processing', 'JavaScript', 'Tailwind CSS'],
+      category: 'Web Development & AI'
     }
   ];
 
@@ -254,6 +266,40 @@ export const PortfolioContent = () => {
                   <p className="text-zinc-500 font-light leading-relaxed mb-8 text-lg">
                     {project.desc}
                   </p>
+
+                  {/* Tech & Context Cards */}
+                  <div className="mb-8 space-y-4">
+                    {/* Context Card */}
+                    <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-rose-50 to-amber-50 rounded-xl border border-rose-100">
+                      <Briefcase size={16} className="text-rose-500 flex-shrink-0" />
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-rose-600 font-semibold">Where</p>
+                        <p className="text-sm font-light text-rose-700">{project.context}</p>
+                      </div>
+                    </div>
+
+                    {/* Category Card */}
+                    <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-amber-50 to-zinc-50 rounded-xl border border-amber-100">
+                      <Code size={16} className="text-amber-600 flex-shrink-0" />
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-amber-600 font-semibold">Category</p>
+                        <p className="text-sm font-light text-amber-700">{project.category}</p>
+                      </div>
+                    </div>
+
+                    {/* Tech Stack Card */}
+                    <div className="p-4 bg-gradient-to-r from-zinc-50 to-zinc-100 rounded-xl border border-zinc-200">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-600 font-semibold mb-3">Tech Stack</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, i) => (
+                          <span key={i} className="px-3 py-1 bg-white text-zinc-600 text-xs rounded-full border border-zinc-200 font-light hover:border-rose-300 hover:text-rose-600 transition-colors">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-rose-500 font-semibold group text-[10px] uppercase tracking-[0.3em] border-b border-rose-200 pb-2 hover:border-rose-500 transition-colors">
                     View GitHub Repo <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
                   </a>
